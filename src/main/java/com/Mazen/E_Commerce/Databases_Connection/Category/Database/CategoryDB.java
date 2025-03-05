@@ -1,6 +1,6 @@
 package com.Mazen.E_Commerce.Databases_Connection.Category.Database;
 
-import com.Mazen.E_Commerce.Databases_Connection.Product.Database.Product_DB;
+import com.Mazen.E_Commerce.Databases_Connection.Product.Database.ProductDB;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,14 +12,14 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "category")
-public class Category_DB {
+@Table(name = "categories")
+public class CategoryDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long category_id;
+  private Long categoryId;
 
-  private String category_name;
+  private String categoryName;
 
-  @OneToMany(mappedBy = "category")
-  private List<Product_DB> products;
+  @OneToMany(mappedBy = "categoryDB")
+  private List<ProductDB> productDB;
 }

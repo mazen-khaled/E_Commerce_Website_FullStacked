@@ -1,7 +1,7 @@
 package com.Mazen.E_Commerce.Databases_Connection.Cart.Database;
 
-import com.Mazen.E_Commerce.Databases_Connection.Product.Database.Product_DB;
-import com.Mazen.E_Commerce.Databases_Connection.User.Database.User_DB;
+import com.Mazen.E_Commerce.Databases_Connection.Product.Database.ProductDB;
+import com.Mazen.E_Commerce.Databases_Connection.User.Database.UserDB;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,19 +11,19 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "cart")
-public class Cart_DB {
+@Table(name = "carts")
+public class CartDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long cert_id;
+  private Long cartId;
 
   @ManyToOne
-  @JoinColumn(name = "user_id")
-  private User_DB user;
+  @JoinColumn(name = "userId")
+  private UserDB userDB;
 
   @ManyToOne
-  @JoinColumn(name = "product_id")
-  private Product_DB product;
+  @JoinColumn(name = "productId")
+  private ProductDB productDB;
 
   private int quantity;
 }

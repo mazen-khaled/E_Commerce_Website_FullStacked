@@ -1,7 +1,7 @@
 package com.Mazen.E_Commerce.Databases_Connection.OrderItem.Database;
 
-import com.Mazen.E_Commerce.Databases_Connection.Order.Database.Order_DB;
-import com.Mazen.E_Commerce.Databases_Connection.Product.Database.Product_DB;
+import com.Mazen.E_Commerce.Databases_Connection.Order.Database.OrderDB;
+import com.Mazen.E_Commerce.Databases_Connection.Product.Database.ProductDB;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,18 +14,18 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "orderItems")
-public class OrderItem_DB {
+public class OrderItemDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long order_item_id;
+  private Long orderItemId;
 
   @ManyToOne
-  @JoinColumn(name = "order_id")
-  private Order_DB order;
+  @JoinColumn(name = "orderId")
+  private OrderDB orderDB;
 
   @ManyToOne
-  @JoinColumn(name = "product_id")
-  private Product_DB product;
+  @JoinColumn(name = "productId")
+  private ProductDB productDB;
 
   private int quantity;
   private BigDecimal price;

@@ -1,9 +1,9 @@
 package com.Mazen.E_Commerce.Databases_Connection.User.Database;
 
-import com.Mazen.E_Commerce.Databases_Connection.Cart.Database.Cart_DB;
-import com.Mazen.E_Commerce.Databases_Connection.Order.Database.Order_DB;
-import com.Mazen.E_Commerce.Databases_Connection.Payment.Database.Payment_DB;
-import com.Mazen.E_Commerce.Databases_Connection.Review.Database.Review_DB;
+import com.Mazen.E_Commerce.Databases_Connection.Cart.Database.CartDB;
+import com.Mazen.E_Commerce.Databases_Connection.Order.Database.OrderDB;
+import com.Mazen.E_Commerce.Databases_Connection.Payment.Database.PaymentDB;
+import com.Mazen.E_Commerce.Databases_Connection.Review.Database.ReviewDB;
 import com.Mazen.E_Commerce.Databases_Connection.User.DataStructure.userRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table (name = "users")
-public class User_DB {
+public class UserDB {
 
   @Id
   @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -39,15 +39,15 @@ public class User_DB {
   private LocalDateTime accountCreatedAt = LocalDateTime.now();
 
   // Relations
-  @OneToMany(mappedBy = "users")
-  private List<Review_DB> reviewDbs;
+  @OneToMany(mappedBy = "userDB")
+  private List<ReviewDB> reviewDbs;
 
-  @OneToMany(mappedBy = "users")
-  private List<Cart_DB> cartDbs;
+  @OneToMany(mappedBy = "userDB")
+  private List<CartDB> cartDbs;
 
-  @OneToMany(mappedBy = "users")
-  private List<Payment_DB> paymentDbs;
+  @OneToMany(mappedBy = "userDB")
+  private List<PaymentDB> paymentDbs;
 
-  @OneToMany(mappedBy = "users")
-  private List<Order_DB> orderDbs;
+  @OneToMany(mappedBy = "userDB")
+  private List<OrderDB> orderDbs;
 }
