@@ -17,17 +17,17 @@ import java.time.LocalDateTime;
 public class ReviewDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long reviewId;
+  private Long review_id;
 
   @ManyToOne
-  @JoinColumn(name = "userId")
+  @JoinColumn(name = "user_id")
   private UserDB userDB;
 
   @ManyToOne
-  @JoinColumn(name = "productId")
+  @JoinColumn(name = "product_id")
   private ProductDB productDB;
 
   private int rating;
   private String comment;
-  private LocalDateTime createdAt;
+  private LocalDateTime created_at;
 }

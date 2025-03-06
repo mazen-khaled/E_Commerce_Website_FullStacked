@@ -13,18 +13,18 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "orderItems")
+@Table(name = "order_items")
 public class OrderItemDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long orderItemId;
+  private Long order_item_id;
 
   @ManyToOne
-  @JoinColumn(name = "orderId")
+  @JoinColumn(name = "order_id")
   private OrderDB orderDB;
 
   @ManyToOne
-  @JoinColumn(name = "productId")
+  @JoinColumn(name = "product_id")
   private ProductDB productDB;
 
   private int quantity;

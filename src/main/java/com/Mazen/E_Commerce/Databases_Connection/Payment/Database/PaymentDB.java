@@ -18,14 +18,14 @@ import java.time.LocalDateTime;
 public class PaymentDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long paymentId;
+  private Long payment_id;
 
   @ManyToOne
-  @JoinColumn(name = "userId")
+  @JoinColumn(name = "user_id")
   private UserDB userDB;
 
   @ManyToOne
-  @JoinColumn(name = "orderId")
+  @JoinColumn(name = "order_id")
   private OrderDB orderDB;
 
   private BigDecimal amount;

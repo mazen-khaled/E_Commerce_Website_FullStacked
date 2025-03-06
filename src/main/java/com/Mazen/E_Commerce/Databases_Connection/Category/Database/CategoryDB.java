@@ -16,9 +16,9 @@ import java.util.List;
 public class CategoryDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long categoryId;
+  private Long category_id;
 
-  private String categoryName;
+  private String category_name;
 
   @OneToMany(mappedBy = "categoryDB")
   private List<ProductDB> productDB;

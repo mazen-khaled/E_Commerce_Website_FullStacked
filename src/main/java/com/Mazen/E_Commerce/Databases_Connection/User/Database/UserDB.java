@@ -22,7 +22,7 @@ public class UserDB {
 
   @Id
   @GeneratedValue (strategy = GenerationType.IDENTITY)
-  private Long userId;
+  private Long user_id;
 
   private String email;
   private String password;
@@ -33,10 +33,10 @@ public class UserDB {
   private String username;
   private String name;
   private String address;
-  private String phoneNumber;
+  private String phone_number;
 
-  private String userImageUrl;
-  private LocalDateTime accountCreatedAt = LocalDateTime.now();
+  private String user_image_url;
+  private LocalDateTime account_created_at = LocalDateTime.now();
 
   // Relations
   @OneToMany(mappedBy = "userDB")

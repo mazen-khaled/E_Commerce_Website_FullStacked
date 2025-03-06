@@ -15,14 +15,14 @@ import lombok.NoArgsConstructor;
 public class CartDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long cartId;
+  private Long cart_id;
 
   @ManyToOne
-  @JoinColumn(name = "userId")
+  @JoinColumn(name = "user_id")
   private UserDB userDB;
 
   @ManyToOne
-  @JoinColumn(name = "productId")
+  @JoinColumn(name = "product_id")
   private ProductDB productDB;
 
   private int quantity;

@@ -21,17 +21,17 @@ import java.util.List;
 public class ProductDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long productId;
+  private Long product_id;
 
-  private String productName;
+  private String product_name;
   private String description;
   private BigDecimal price;
-  private int stockQuantity;
-  private String productImageUrl;
-  private LocalDateTime createdAt;
+  private int stock_quantity;
+  private String product_image_url;
+  private LocalDateTime created_at;
 
   @ManyToOne
-  @JoinColumn(name = "categoryId")
+  @JoinColumn(name = "category_id")
   private CategoryDB categoryDB;
 
   @OneToMany(mappedBy = "productDB")

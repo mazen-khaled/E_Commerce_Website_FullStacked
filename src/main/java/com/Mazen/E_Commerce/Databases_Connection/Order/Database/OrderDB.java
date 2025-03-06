@@ -20,14 +20,14 @@ import java.util.List;
 public class OrderDB {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long orderId;
+  private Long order_id;
 
   @ManyToOne
-  @JoinColumn(name = "userId")
+  @JoinColumn(name = "user_id")
   private UserDB userDB;
 
-  private LocalDateTime orderDate;
-  private BigDecimal totalAmount;
+  private LocalDateTime order_date;
+  private BigDecimal total_amount;
   private String status;
 
   @OneToMany(mappedBy = "orderDB")
